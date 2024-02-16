@@ -1,6 +1,6 @@
 ﻿namespace FirstTask;
 
-public class Person : IInit
+public class Person : IInit, ICloneable
 {
     public int Id { get; set; }
     public string FirstName { get; set; }
@@ -27,5 +27,10 @@ public class Person : IInit
         Id = r.Next(0);
         FirstName = "Alexandr";
         LastName = "Ivanov";
+    }
+
+    public object Clone()
+    {
+        return new Person();
     }
 }
